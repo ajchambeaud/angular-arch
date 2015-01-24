@@ -1,0 +1,15 @@
+<!-- Sidebar -->
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand" ng-repeat="articulo in articulos">
+            <a ui-sref="articulos.detalle({id:articulo.id})">{{articulo.titulo}}</a>
+        </li>
+    </ul>
+</div>
+<!-- /#sidebar-wrapper -->
+
+<!-- Page Content -->
+<div id="page-content-wrapper" ui-view >
+
+</div>
+<!-- /#page-content-wrapper -->

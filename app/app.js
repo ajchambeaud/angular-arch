@@ -14,17 +14,35 @@ app.config([
             .state("home", {
                 url : "/",
                 controller : "homeController",
-                templateUrl : "app/home/templates/home.html"
+                templateUrl : "app/home/templates/home.html",
+                onEnter: function(){
+                    console.log("Activando estado HOME");
+                },
+                onExit: function(){
+                    console.log("Saliendo de estado HOME");
+                }
             })
             .state("articulos",{
                 url : "/articulos",
                 templateUrl : "app/articulos/templates/articulos.html",
-                controller : "articuloController"
+                controller : "articuloController",
+                onEnter: function(){
+                    console.log("Activando estado ARTICULOS");
+                },
+                onExit: function(){
+                    console.log("Saliendo de estado ARTICULOS");
+                }
             })
             .state("articulos.detalle",{
                 url : "/{id}", //por ej /articulos/3
                 templateUrl : "app/articulos/templates/articulos.detalle.html",
-                controller : "detalleController"
+                controller : "detalleController",
+                onEnter: function(){
+                    console.log("Activando estado ARTICULOS.DETALLE");
+                },
+                onExit: function(){
+                    console.log("Saliendo de estado ARTICULOS.DETALLE");
+                }
             });
 
         $urlRouterProvider.otherwise('/');
